@@ -1,5 +1,5 @@
-import mongodb from "mongodb"
-const ObjectId = mongodb.ObjectID
+/*import mongodb from "mongodb"
+const ObjectId = mongodb.ObjectID*/
 let restaurants
 
 export default class RestaurantsDAO {
@@ -46,7 +46,7 @@ export default class RestaurantsDAO {
 
     try {
       const restaurantsList = await displayCursor.toArray()
-      const totalNumRestaurants = await restaurants.countDocuments(query)
+      const totalNumRestaurants = await restaurants.countDocuments(query) 
 
       return { restaurantsList, totalNumRestaurants }
     } catch (e) {
@@ -55,8 +55,8 @@ export default class RestaurantsDAO {
       )
       return { restaurantsList: [], totalNumRestaurants: 0 }
     }
-  }
-  static async getRestaurantByID(id) {
+  } 
+  /* static async getRestaurantByID(id) {
     try {
       const pipeline = [
         {
@@ -109,5 +109,5 @@ export default class RestaurantsDAO {
       console.error(`Unable to get cuisines, ${e}`)
       return cuisines
     }
-  }
+  }*/
 }
